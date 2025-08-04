@@ -1,284 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Digital Transformation Journey</title>
-<!-- Google Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" />
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<!-- Custom CSS -->
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Transformation Journey - Transform Your Business</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<div class="container">
-  <!-- Header with Logo & Navigation -->
-  <header class="header">
-    <h1 class="logo">DigitalFlow Solutions</h1>
-    <div class="nav-controls">
-      <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
-      <span class="slide-count"><span id="slide-current">1</span> / <span id="slide-total">7</span></span>
-      <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
+    <div class="presentation-container">
+        <!-- Professional Header -->
+        <header class="presentation-header">
+            <div class="logo-section">
+                <h1 class="company-logo">DigitalFlow Solutions</h1>
+                <p class="tagline">Transforming Businesses Through Technology</p>
+            </div>
+            <div class="navigation">
+                <div class="nav-controls">
+                    <span class="slide-counter"><span id="current-slide">1</span> / <span id="total-slides">7</span></span>
+                    <div class="nav-arrows">
+                        <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-btn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Slide 1: Welcome -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-content">
+                <div class="hero-section">
+                    <h1 class="main-title">Transform Your Business with <span class="highlight">Digital Excellence</span></h1>
+                    <p class="subtitle">From 0% to 100% Digital Automation - Your Journey Starts Here</p>
+                    <button class="cta-button" id="discover-btn">
+                        <i class="fas fa-rocket"></i>
+                        Discover Your Digital Potential
+                    </button>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>12+</h3>
+                            <p>Integrated Systems</p>
+                        </div>
+                        <div class="stat">
+                            <h3>₹59,999</h3>
+                            <p>Complete Solution</p>
+                        </div>
+                        <div class="stat">
+                            <h3>4 Weeks</h3>
+                            <p>Implementation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Company Types -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2 class="slide-title">Where Does Your Company Stand?</h2>
+                <div class="company-types">
+                    <div class="company-card" id="company-0">
+                        <div class="company-icon">📄</div>
+                        <h3>0% Digital</h3>
+                        <div class="company-description hidden">
+                            <ul>
+                                <li>Paper-based attendance logs</li>
+                                <li>Manual sales tracking on notebooks</li>
+                                <li>Physical file storage systems</li>
+                                <li>Handwritten reports and documentation</li>
+                                <li>No digital communication tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="company-card" id="company-40">
+                        <div class="company-icon">⚡</div>
+                        <h3>40% Digital</h3>
+                        <div class="company-description hidden">
+                            <ul>
+                                <li>Google Forms for basic data collection</li>
+                                <li>Tally software for accounting</li>
+                                <li>WhatsApp for manual reporting</li>
+                                <li>Basic Excel sheets for tracking</li>
+                                <li>Mixed paper-digital processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="company-card" id="company-100">
+                        <div class="company-icon">🚀</div>
+                        <h3>100% Automated</h3>
+                        <div class="company-description hidden">
+                            <ul>
+                                <li>Automated attendance & HR dashboard</li>
+                                <li>Real-time sales CRM with analytics</li>
+                                <li>Auto-generated reports via email/WhatsApp</li>
+                                <li>Complete inventory & production tracking</li>
+                                <li>AI-powered decision making systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Systems Overview with Exact Pie Chart -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2 class="slide-title">12 Integrated Systems Portfolio</h2>
+                <div class="systems-overview">
+                    <div class="systems-wheel-container">
+                        <div class="category-pie-chart" id="category-pie-chart">
+                            <!-- HR & Employee Management (Blue) -->
+                            <div class="category-section hr-category" data-category="hr">
+                                <div class="system-slice" data-system="9" data-angle="0">
+                                    <span class="system-name">MIS Scoring</span>
+                                </div>
+                                <div class="system-slice" data-system="8" data-angle="30">
+                                    <span class="system-name">Employee Dir</span>
+                                </div>
+                                <div class="system-slice" data-system="7" data-angle="60">
+                                    <span class="system-name">Attendance Sys</span>
+                                </div>
+                                <div class="system-slice" data-system="6" data-angle="90">
+                                    <span class="system-name">HRMS</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Sales & Customer (Gray) -->
+                            <div class="category-section sales-category" data-category="sales">
+                                <div class="system-slice" data-system="5" data-angle="120">
+                                    <span class="system-name">Sales CRM</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Operations & Inventory (Green) -->
+                            <div class="category-section ops-category" data-category="ops">
+                                <div class="system-slice" data-system="4" data-angle="150">
+                                    <span class="system-name">Production Mgmt</span>
+                                </div>
+                                <div class="system-slice" data-system="3" data-angle="180">
+                                    <span class="system-name">Supplier Mgmt S</span>
+                                </div>
+                                <div class="system-slice" data-system="2" data-angle="210">
+                                    <span class="system-name">Inventory Mgmt</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Workflow Automation (Red) -->
+                            <div class="category-section workflow-category" data-category="workflow">
+                                <div class="system-slice" data-system="1" data-angle="240">
+                                    <span class="system-name">Auto Reminder S</span>
+                                </div>
+                                <div class="system-slice" data-system="0" data-angle="270">
+                                    <span class="system-name">Basic Checklist</span>
+                                </div>
+                                <div class="system-slice" data-system="11" data-angle="300">
+                                    <span class="system-name">System Tracker</span>
+                                </div>
+                                <div class="system-slice" data-system="10" data-angle="330">
+                                    <span class="system-name">Custom Flow Mgmt</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Center Hub -->
+                            <div class="center-hub">
+                                <span class="hub-text">12<br>Systems</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Category Labels -->
+                        <div class="category-labels">
+                            <div class="category-label hr-label">HR & Emp Mgmt</div>
+                            <div class="category-label sales-label">Sales & Cust</div>
+                            <div class="category-label ops-label">Ops & Inventory</div>
+                            <div class="category-label workflow-label">Workflow Auto</div>
+                        </div>
+                    </div>
+                    
+                    <!-- System Details Panel -->
+                    <div class="system-details-panel">
+                        <div class="system-info-card" id="system-info">
+                            <div class="system-header">
+                                <h3 id="system-title">Basic Checklist System</h3>
+                                <div class="system-category" id="system-category">Workflow Automation</div>
+                            </div>
+                            
+                            <div class="system-details-grid">
+                                <div class="detail-item what-item">
+                                    <div class="detail-icon"><i class="fas fa-info-circle"></i></div>
+                                    <div class="detail-content">
+                                        <h4>What it does</h4>
+                                        <p id="what-text">Digital task management and quality control checklists for daily operations</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail-item why-item">
+                                    <div class="detail-icon"><i class="fas fa-question-circle"></i></div>
+                                    <div class="detail-content">
+                                        <h4>Why it matters</h4>
+                                        <p id="why-text">Ensures consistency and eliminates human errors in critical processes</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="detail-item growth-item">
+                                    <div class="detail-icon"><i class="fas fa-chart-line"></i></div>
+                                    <div class="detail-content">
+                                        <h4>Impact & Growth</h4>
+                                        <p id="growth-text">Reduces operational defects by 70% and improves efficiency significantly</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Controls -->
+                        <div class="system-navigation">
+                            <button id="prev-system-btn" class="system-nav-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="system-counter">
+                                <span id="current-system">1</span> / 12
+                            </div>
+                            <button id="next-system-btn" class="system-nav-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Timeline without scroll -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2 class="slide-title">4-Week Implementation Roadmap</h2>
+                <div class="timeline-presentation">
+                    <div class="week-display" id="week-display">
+                        <!-- Week 1 -->
+                        <div class="week-content active" data-week="1">
+                            <div class="week-header">
+                                <div class="week-badge">Week 1</div>
+                                <h3>HR & Employee Management</h3>
+                            </div>
+                            <div class="week-systems">
+                                <div class="system-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>HRMS Setup & Configuration</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Attendance System Integration</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-address-book"></i>
+                                    <span>Employee Directory Creation</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>MIS Scoring System Setup</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Week 2 -->
+                        <div class="week-content" data-week="2">
+                            <div class="week-header">
+                                <div class="week-badge">Week 2</div>
+                                <h3>Operations Management</h3>
+                            </div>
+                            <div class="week-systems">
+                                <div class="system-item">
+                                    <i class="fas fa-boxes"></i>
+                                    <span>Inventory Management System</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Supplier Management Portal</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Production Management Setup</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-list-check"></i>
+                                    <span>Basic Checklist Framework</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Week 3 -->
+                        <div class="week-content" data-week="3">
+                            <div class="week-header">
+                                <div class="week-badge">Week 3</div>
+                                <h3>Sales & Customer Management</h3>
+                            </div>
+                            <div class="week-systems">
+                                <div class="system-item">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Sales CRM Implementation</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Custom Flow Management</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-radar"></i>
+                                    <span>System Tracker Setup</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Auto Reminder Configuration</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Week 4 -->
+                        <div class="week-content" data-week="4">
+                            <div class="week-header">
+                                <div class="week-badge">Week 4</div>
+                                <h3>Reporting & Support</h3>
+                            </div>
+                            <div class="week-systems">
+                                <div class="system-item">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Dashboard Integration</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Automated Report Generation</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Staff Training & Documentation</span>
+                                </div>
+                                <div class="system-item">
+                                    <i class="fas fa-headset"></i>
+                                    <span>24/7 Support Setup</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Week Navigation -->
+                    <div class="week-navigation">
+                        <button id="prev-week-btn" class="week-nav-btn" disabled>
+                            <i class="fas fa-chevron-left"></i> Previous Week
+                        </button>
+                        <div class="week-indicators">
+                            <span class="week-dot active" data-week="1"></span>
+                            <span class="week-dot" data-week="2"></span>
+                            <span class="week-dot" data-week="3"></span>
+                            <span class="week-dot" data-week="4"></span>
+                        </div>
+                        <button id="next-week-btn" class="week-nav-btn">
+                            Next Week <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: ROI & Impact -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2 class="slide-title">Investment & Returns</h2>
+                <div class="roi-container">
+                    <div class="roi-section" id="investment-section">
+                        <div class="investment-card">
+                            <h3>Total Investment</h3>
+                            <div class="price">₹59,999</div>
+                            <p>Complete 12-System Package</p>
+                            <ul>
+                                <li>4-Week Implementation</li>
+                                <li>Staff Training Included</li>
+                                <li>3 Months Free Support</li>
+                                <li>Regular Updates & Maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="roi-section" id="growth-section">
+                        <div class="growth-chart">
+                            <h3>Expected Growth Pattern</h3>
+                            <div class="growth-timeline">
+                                <div class="growth-month">
+                                    <span class="month">Month 1</span>
+                                    <div class="growth-bar" style="height: 20%;">
+                                        <span class="growth-percent">Setup Phase</span>
+                                    </div>
+                                </div>
+                                <div class="growth-month">
+                                    <span class="month">Month 2</span>
+                                    <div class="growth-bar" style="height: 45%;">
+                                        <span class="growth-percent">+25% Efficiency</span>
+                                    </div>
+                                </div>
+                                <div class="growth-month">
+                                    <span class="month">Month 3</span>
+                                    <div class="growth-bar" style="height: 70%;">
+                                        <span class="growth-percent">+50% Productivity</span>
+                                    </div>
+                                </div>
+                                <div class="growth-month">
+                                    <span class="month">Month 4+</span>
+                                    <div class="growth-bar" style="height: 100%;">
+                                        <span class="growth-percent">+85% ROI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roi-section" id="benefits-section">
+                        <div class="benefits-card">
+                            <h3>Key Benefits</h3>
+                            <div class="benefit-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Revenue increase by 40-60%</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Time saving of 8+ hours daily</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-users"></i>
+                                <span>Staff productivity boost by 75%</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>100% data accuracy & security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Company Comparison -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2 class="slide-title">Perfect Solution for Every Business Type</h2>
+                <div class="business-showcase">
+                    <div class="business-type-card manufacturing-card active" id="manufacturing-card">
+                        <div class="card-header">
+                            <div class="business-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3>Manufacturing Excellence</h3>
+                            <p class="card-subtitle">Complete production automation</p>
+                        </div>
+                        
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-cogs"></i></div>
+                                <h4>Smart Production</h4>
+                                <p>Real-time monitoring & quality control with predictive maintenance</p>
+                                <div class="metric">+45% Efficiency</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-warehouse"></i></div>
+                                <h4>Inventory Intelligence</h4>
+                                <p>Automated stock management with AI-powered demand forecasting</p>
+                                <div class="metric">-60% Waste</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-truck"></i></div>
+                                <h4>Supply Chain Sync</h4>
+                                <p>Integrated supplier network with automated procurement</p>
+                                <div class="metric">-50% Delays</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4>Analytics Engine</h4>
+                                <p>Production insights with performance optimization recommendations</p>
+                                <div class="metric">+75% Productivity</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-type-card service-card" id="service-card">
+                        <div class="card-header">
+                            <div class="business-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Service Excellence</h3>
+                            <p class="card-subtitle">Customer-centric automation</p>
+                        </div>
+                        
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                                <h4>CRM Mastery</h4>
+                                <p>360° customer view with automated engagement workflows</p>
+                                <div class="metric">+65% Retention</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-tasks"></i></div>
+                                <h4>Project Precision</h4>
+                                <p>Smart project tracking with resource optimization</p>
+                                <div class="metric">+80% On-Time</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                                <h4>Time Intelligence</h4>
+                                <p>Automated time tracking with productivity analytics</p>
+                                <div class="metric">+40% Utilization</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-star"></i></div>
+                                <h4>Quality Assurance</h4>
+                                <p>Client feedback integration with service improvement loops</p>
+                                <div class="metric">95% Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-type-card growth-card" id="growth-card">
+                        <div class="card-header">
+                            <div class="business-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Growth & Expansion</h3>
+                            <p class="card-subtitle">Scale-ready infrastructure</p>
+                        </div>
+                        
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-globe"></i></div>
+                                <h4>Global Ready</h4>
+                                <p>Multi-location support with unified operations management</p>
+                                <div class="metric">∞ Scalability</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-database"></i></div>
+                                <h4>Data Centralization</h4>
+                                <p>Unified data warehouse with cross-branch analytics</p>
+                                <div class="metric">100% Visibility</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-network-wired"></i></div>
+                                <h4>Connected Operations</h4>
+                                <p>Real-time synchronization across all business units</p>
+                                <div class="metric">Zero Latency</div>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon"><i class="fas fa-brain"></i></div>
+                                <h4>AI-Powered Growth</h4>
+                                <p>Machine learning insights for strategic expansion</p>
+                                <div class="metric">Smart Decisions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Type Navigation -->
+                <div class="business-navigation">
+                    <button class="business-nav-btn active" data-business="manufacturing">
+                        <i class="fas fa-industry"></i>
+                        <span>Manufacturing</span>
+                    </button>
+                    <button class="business-nav-btn" data-business="service">
+                        <i class="fas fa-handshake"></i>
+                        <span>Service</span>
+                    </button>
+                    <button class="business-nav-btn" data-business="growth">
+                        <i class="fas fa-rocket"></i>
+                        <span>Growth</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Contact -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <div class="contact-section">
+                    <h2 class="slide-title">Ready to Transform Your Business?</h2>
+                    <p class="contact-subtitle">Let's discuss how we can take your company from 40% to 100% digital automation</p>
+                    
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email Us</h3>
+                            <p>sudarshankarn@gmail.com</p>
+                            <button class="contact-btn" id="email-btn">Send Email</button>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>Call Us</h3>
+                            <p>+91 84345 07008</p>
+                            <button class="contact-btn" id="call-btn">Call Now</button>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <i class="fas fa-calendar"></i>
+                            <h3>Schedule Meeting</h3>
+                            <p>Book a free consultation</p>
+                            <button class="contact-btn" id="schedule-btn">Schedule Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="final-cta">
+                        <h3>Why settle for 40% when you can achieve 100%?</h3>
+                        <p>Join hundreds of companies that have already transformed their operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- Progress Bar -->
-  <div class="progress-bar-container">
-    <div class="progress-bar" id="progress"></div>
-  </div>
-
-  <!-- Slides -->
-  <div class="slides">
-    <!-- Slide 1: Welcome -->
-    <section class="slide active" id="slide-1">
-      <div class="slide-content">
-        <h1 class="title">Transform Your Business with <span class="highlight">Digital Excellence</span></h1>
-        <p class="subtitle">From 0% to 100% Digital Automation — Your Journey Starts Here</p>
-        <button class="btn discover" id="discoverBtn"><i class="fas fa-rocket"></i> Discover Your Digital Potential</button>
-        <div class="stats">
-          <div class="stat"><h3>12+</h3><p>Systems Integrated</p></div>
-          <div class="stat"><h3>₹59,999</h3><p>Complete Solution</p></div>
-          <div class="stat"><h3>4 Weeks</h3><p>Implementation Time</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 2: Company Stages -->
-    <section class="slide" id="slide-2">
-      <div class="slide-content">
-        <h2 class="title">Where Does Your Company Stand?</h2>
-        <div class="company-cards">
-          <div class="company-card" id="company-0">
-            <div class="icon"><i class="fas fa-file-alt"></i></div>
-            <h3>0% Digital</h3>
-            <div class="desc hidden">
-              <ul>
-                <li>Paper-based logs for attendance, sales, etc.</li>
-                <li>Manual record keeping</li>
-                <li>Physical document storage</li>
-                <li>Handwritten reports</li>
-                <li>No digital communication tools</li>
-              </ul>
-            </div>
-          </div>
-          <div class="company-card" id="company-40">
-            <div class="icon"><i class="fas fa-bolt"></i></div>
-            <h3>40% Digital</h3>
-            <div class="desc hidden">
-              <ul>
-                <li>Google Forms, Tally, WhatsApp reports</li>
-                <li>Partial automation, manual interventions</li>
-                <li>Excel sheets for tracking</li>
-                <li>Some digital communication</li>
-                <li>Limited digital workflows</li>
-              </ul>
-            </div>
-          </div>
-          <div class="company-card" id="company-100">
-            <div class="icon"><i class="fas fa-rocket"></i></div>
-            <h3>100% Automation</h3>
-            <div class="desc hidden">
-              <ul>
-                <li>Auto-generated reports via mail & WhatsApp</li>
-                <li>Automated attendance & HR dashboards</li>
-                <li>Full employee directory & MIS scoring</li>
-                <li>Seamless production & sales logs</li>
-                <li>Complete real-time monitoring & analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 3: Systems Pie Chart with Rotating Circles -->
-    <section class="slide" id="slide-3">
-      <div class="slide-content systems-container">
-        <h2 class="title">12 Integrated Systems Portfolio</h2>
-        <div class="system-wheel-wrap">
-          <div class="dual-circles">
-            <div class="outer-circle" id="outer-circle"></div>
-            <div class="inner-circle" id="inner-circle"></div>
-            <div class="center-hub"><i class="fas fa-cogs"></i></div>
-          </div>
-        </div>
-        <div class="category-labels">
-          <div class="label hr-label">HR & Employee</div>
-          <div class="label sales-label">Sales & CRM</div>
-          <div class="label ops-label">Operations</div>
-          <div class="label flow-label">Automation & Workflow</div>
-        </div>
-        <!-- System Explanation Panel -->
-        <div class="system-detail-panel">
-          <h3 id="system-title">Basic Checklist System</h3>
-          <div class="system-category">Workflow Automation</div>
-          <div class="system-desc">
-            <div class="what "><strong>What:</strong> Digital task & quality checklists</div>
-            <div class="why "><strong>Why:</strong> Ensures consistency, reduces errors</div>
-            <div class="impact "><strong>Impact & Growth:</strong> 70% defect reduction & efficiency boost</div>
-          </div>
-          <div class="system-nav">
-            <button id="prev-system"><i class="fas fa-chevron-left"></i></button>
-            <span class="system-count"><span id="sys-count">1</span>/12</span>
-            <button id="next-system"><i class="fas fa-chevron-right"></i></button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 4: Implementation Timeline (Fixed) -->
-    <section class="slide" id="slide-4">
-      <div class="slide-content">
-        <h2 class="title">Implementation Timeline</h2>
-        <div class="timeline-steps" id="timeline-steps">
-          <!-- Week 1 -->
-          <div class="week-step active" data-week="1">
-            <div class="week-header">Week 1</div>
-            <ul>
-              <li>HRMS setup & Employee Directory</li>
-              <li>Attendance System Integration</li>
-              <li>MIS Scoring System</li>
-            </ul>
-          </div>
-          <!-- Week 2 -->
-          <div class="week-step" data-week="2">
-            <div class="week-header">Week 2</div>
-            <ul>
-              <li>Inventory Management System</li>
-              <li>Supplier Portal</li>
-              <li>Production Management</li>
-            </ul>
-          </div>
-          <!-- Week 3 -->
-          <div class="week-step" data-week="3">
-            <div class="week-header">Week 3</div>
-            <ul>
-              <li>Sales CRM Implementation</li>
-              <li>Custom Flow Automation</li>
-              <li>System Tracker Setup</li>
-            </ul>
-          </div>
-          <!-- Week 4 -->
-          <div class="week-step" data-week="4">
-            <div class="week-header">Week 4</div>
-            <ul>
-              <li>Dashboard & Reports</li>
-              <li>Staff Training & Support</li>
-            </ul>
-          </div>
-        </div>
-        <div class="timeline-controls">
-          <button id="prev-week"><i class="fas fa-chevron-left"></i> Prev</button>
-          <button id="next-week">Next <i class="fas fa-chevron-right"></i></button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 5: ROI & Impact -->
-    <section class="slide" id="slide-5">
-      <div class="slide-content">
-        <h2 class="title">Impact & ROI</h2>
-        <div class="impact-grid">
-          <div class="impact-item">
-            <h3>Cost</h3>
-            <p>Total Rs. 59,999/- for 12 systems (2 months)</p>
-          </div>
-          <div class="impact-item">
-            <h3>Growth</h3>
-            <p>
-              Expect exponential growth from month 2 onwards<br/>
-              +40% revenue, +75% productivity, 50% cost savings
-            </p>
-          </div>
-          <div class="impact-item">
-            <h3>Statistics</h3>
-            <ul>
-              <li>Efficiency up by 50%</li>
-              <li>Time savings of 8+ hours daily</li>
-              <li>ROI exceeds 85% in 4 months</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 6: Business Solutions (Enhanced) -->
-    <section class="slide" id="slide-6">
-      <div class="slide-content">
-        <h2 class="title">Tailored Business Solutions</h2>
-        <div class="company-display">
-          <!-- Manufacturing -->
-          <div class="business-box active" id="manufacturing-box">
-            <h3>Manufacturing</h3>
-            <ul>
-              <li>Real-time production & quality control</li>
-              <li>Automated inventory & supply chain</li>
-              <li>Analytics-driven optimization</li>
-            </ul>
-          </div>
-          <!-- Service -->
-          <div class="business-box" id="service-box">
-            <h3>Service</h3>
-            <ul>
-              <li>Customer CRM & feedback system</li>
-              <li>Project & task management</li>
-              <li>Automation in scheduling & follow-up</li>
-            </ul>
-          </div>
-          <!-- Growth / Multinational -->
-          <div class="business-box" id="growth-box">
-            <h3>International Growth</h3>
-            <ul>
-              <li>Multi-location support</li>
-              <li>Unified data warehouse</li>
-              <li>Global scalability features</li>
-            </ul>
-          </div>
-        </div>
-        <div class="solution-buttons">
-          <button data-business="manufacturing" class="btn switch">Manufacturing</button>
-          <button data-business="service" class="btn switch">Service</button>
-          <button data-business="growth" class="btn switch">Growth</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 7: Contact & Offer -->
-    <section class="slide" id="slide-7">
-      <div class="slide-content contact">
-        <h2 class="title">Ready to Transform?</h2>
-        <p>Let's achieve your full potential together. Reach out now!</p>
-        <div class="contact-info">
-          <div class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>sudarshankarn@gmail.com</p>
-            <button class="btn contact-btn" id="mailBtn">Send Mail</button>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-phone"></i>
-            <h3>Call</h3>
-            <p>8434507008</p>
-            <button class="btn contact-btn" id="callBtn">Call Now</button>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-calendar-alt"></i>
-            <h3>Schedule</h3>
-            <p>Drop a mail for appointment</p>
-            <button class="btn contact-btn" id="scheduleBtn">Drop Mail</button>
-          </div>
-        </div>
-        <div class="final-adv">
-          <h3>Why settle at 40% productivity? Aim for 100%!</h3>
-          <p>Join the revolution with our proven solutions.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
-
-<!-- JavaScript Files -->
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
