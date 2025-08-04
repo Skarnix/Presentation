@@ -781,4 +781,255 @@ body {
     align-items: center;
     gap: 20px;
     padding: 20px 0;
-    border-bottom: 1px solid #
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-item i {
+    color: rgba(33, 128, 141, 1);
+    font-size: 1.5rem;
+    min-width: 30px;
+}
+
+.benefit-item span {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Slide 6 - Comparison */
+.comparison-container {
+    position: relative;
+    min-height: 500px;
+}
+
+.comparison-section {
+    opacity: 1;
+    transition: all 0.8s ease;
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.comparison-section.hidden {
+    opacity: 0;
+    transform: translateX(50px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.comparison-section h3 {
+    color: rgba(33, 128, 141, 1);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-points {
+    display: grid;
+    gap: 30px;
+}
+
+.comparison-point {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+    background: rgba(33, 128, 141, 0.05);
+    border-radius: 15px;
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.comparison-point.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.comparison-point i {
+    color: rgba(33, 128, 141, 1);
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+.comparison-point span {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+/* Slide 7 - Contact */
+.contact-section {
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.contact-cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 300px;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(33, 128, 141, 0.2);
+}
+
+.contact-card i {
+    font-size: 3rem;
+    color: rgba(33, 128, 141, 1);
+    margin-bottom: 25px;
+}
+
+.contact-card h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.contact-card p {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.contact-btn {
+    background: rgba(33, 128, 141, 1);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.contact-btn:hover {
+    background: rgba(33, 128, 141, 0.8);
+    transform: scale(1.05);
+}
+
+.final-cta {
+    background: linear-gradient(135deg, rgba(33, 128, 141, 0.1), rgba(33, 128, 141, 0.05));
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.final-cta h3 {
+    color: rgba(33, 128, 141, 1);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.final-cta p {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .systems-overview {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .roi-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .presentation-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .company-types {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .timeline-content {
+        margin: 20px 0 0 0;
+    }
+    
+    .systems-wheel {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+/* Smooth animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.center-hub {
+    animation: pulse 3s infinite;
+}
