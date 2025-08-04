@@ -17,11 +17,21 @@
         <!-- Slide 1: Landing/Title -->
         <section class="slide active" data-slide="1">
             <div class="slide-content centered">
-                <h1 class="title-large">Digital Transformation</h1>
-                <h2 class="subtitle">Your Journey to Success</h2>
-                <p class="description">Empowering businesses through comprehensive system integration and automation</p>
-                <div class="cta-button">
-                    <button class="btn btn--primary btn--lg" onclick="sendEmail()">Discover Your Digital Potential</button>
+                <div class="hero-content">
+                    <h1 class="title-large animated fadeInUp">Digital Transformation</h1>
+                    <h2 class="subtitle animated fadeInUp delay-1">Your Journey to Success</h2>
+                    <p class="description animated fadeInUp delay-2">Empowering businesses through comprehensive system integration and automation</p>
+                    <div class="cta-button animated fadeInUp delay-3">
+                        <button class="btn btn-primary btn-lg pulse" onclick="sendEmail()">
+                            <span>Discover Your Digital Potential</span>
+                            <i class="arrow">→</i>
+                        </button>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="float-element float-1"></div>
+                    <div class="float-element float-2"></div>
+                    <div class="float-element float-3"></div>
                 </div>
             </div>
         </section>
@@ -83,34 +93,39 @@
                         <div class="percentage">0%</div>
                         <h3>Traditional</h3>
                         <p>Paper-based processes</p>
+                        <div class="card-glow"></div>
                     </div>
                     <div class="company-type-card partial" onclick="showExplanation('partial')">
                         <div class="percentage">40%</div>
                         <h3>Partially Digital</h3>
                         <p>Mixed digital & manual</p>
+                        <div class="card-glow"></div>
                     </div>
                     <div class="company-type-card automated" onclick="showExplanation('automated')">
                         <div class="percentage">100%</div>
                         <h3>Fully Automated</h3>
                         <p>Complete automation</p>
+                        <div class="card-glow"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 3: Our Solutions Portfolio (Detailed) -->
+        <!-- Slide 3: Our Solutions Portfolio -->
         <section class="slide" data-slide="3">
             <div class="slide-content">
                 <h1 class="slide-title">Our Complete Systems Portfolio</h1>
                 <p class="slide-subtitle">12 Integrated Systems for Complete Digital Transformation</p>
                 
                 <div class="systems-container">
-                    <!-- Rotating Chart Container -->
                     <div class="chart-container">
                         <canvas id="systemsChart" width="400" height="400"></canvas>
+                        <div class="chart-center">
+                            <div class="center-text">Digital</div>
+                            <div class="center-text">Systems</div>
+                        </div>
                     </div>
                     
-                    <!-- System Details Panel -->
                     <div class="system-details" id="systemDetails">
                         <div class="system-info">
                             <h3 id="systemName">HRMS</h3>
@@ -267,7 +282,7 @@
             </div>
         </section>
 
-        <!-- Slide 6: Success Stories - Manufacturing -->
+        <!-- Slide 6: Success Stories -->
         <section class="slide" data-slide="6">
             <div class="slide-content">
                 <h1 class="slide-title">Transformation Success Stories</h1>
@@ -462,8 +477,8 @@
                     </div>
                     
                     <div class="cta-buttons">
-                        <button class="btn btn--primary btn--lg" onclick="sendEmail()">Get Started Now</button>
-                        <button class="btn btn--secondary btn--lg" onclick="scheduleCall()">Schedule Consultation</button>
+                        <button class="btn btn-primary btn-lg" onclick="sendEmail()">Get Started Now</button>
+                        <button class="btn btn-secondary btn-lg" onclick="scheduleCall()">Schedule Consultation</button>
                     </div>
                 </div>
             </div>
