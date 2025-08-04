@@ -116,7 +116,7 @@ class PresentationController {
         // Start auto-play after a short delay
         setTimeout(() => {
             this.startAutoPlay();
-        }, 1000);
+        }, 2000);
     }
 
     initializeElements() {
@@ -130,11 +130,11 @@ class PresentationController {
 
     bindEvents() {
         // Navigation buttons
-        this.prevBtn.addEventListener('click', () => this.previousSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.previousSlide());
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.nextSlide());
         
         // Play/Pause button
-        this.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+        if (this.playPauseBtn) this.playPauseBtn.addEventListener('click', () => this.togglePlayPause());
         
         // Slide indicators
         this.indicators.forEach((indicator, index) => {
@@ -145,7 +145,7 @@ class PresentationController {
         document.addEventListener('keydown', (e) => this.handleKeypress(e));
         
         // Pause on hover over navigation elements
-        const navElements = [this.prevBtn, this.nextBtn, ...this.indicators, this.playPauseBtn];
+        const navElements = [this.prevBtn, this.nextBtn, ...this.indicators, this.playPauseBtn].filter(Boolean);
         navElements.forEach(element => {
             element.addEventListener('mouseenter', () => this.pauseAutoPlay());
             element.addEventListener('mouseleave', () => {
@@ -190,7 +190,9 @@ class PresentationController {
 
     togglePlayPause() {
         this.isPlaying = !this.isPlaying;
-        this.playPauseBtn.textContent = this.isPlaying ? '⏸' : '▶';
+        if (this.playPauseBtn) {
+            this.playPauseBtn.textContent = this.isPlaying ? '⏸' : '▶';
+        }
         
         if (this.isPlaying) {
             this.startAutoPlay();
@@ -203,15 +205,23 @@ class PresentationController {
         if (slideNumber < 1 || slideNumber > this.totalSlides) return;
         
         // Remove active class from current slide
-        this.slides[this.currentSlide - 1].classList.remove('active');
-        this.indicators[this.currentSlide - 1].classList.remove('active');
+        if (this.slides[this.currentSlide - 1]) {
+            this.slides[this.currentSlide - 1].classList.remove('active');
+        }
+        if (this.indicators[this.currentSlide - 1]) {
+            this.indicators[this.currentSlide - 1].classList.remove('active');
+        }
         
         // Set new current slide
         this.currentSlide = slideNumber;
         
         // Add active class to new slide
-        this.slides[this.currentSlide - 1].classList.add('active');
-        this.indicators[this.currentSlide - 1].classList.add('active');
+        if (this.slides[this.currentSlide - 1]) {
+            this.slides[this.currentSlide - 1].classList.add('active');
+        }
+        if (this.indicators[this.currentSlide - 1]) {
+            this.indicators[this.currentSlide - 1].classList.add('active');
+        }
         
         this.updateProgress();
         this.handleSlideSpecificLogic();
@@ -234,7 +244,9 @@ class PresentationController {
 
     updateProgress() {
         const progressPercent = (this.currentSlide / this.totalSlides) * 100;
-        this.progressFill.style.width = progressPercent + '%';
+        if (this.progressFill) {
+            this.progressFill.style.width = progressPercent + '%';
+        }
     }
 
     handleSlideSpecificLogic() {
@@ -246,7 +258,7 @@ class PresentationController {
                 this.startSystemsAnimation();
                 break;
             case 5:
-                this.initializeGrowthChart();
+                setTimeout(() => this.initializeGrowthChart(), 500);
                 break;
             case 6:
                 this.startComparisonAnimation();
@@ -259,7 +271,10 @@ class PresentationController {
         document.querySelectorAll('.company-explanation').forEach(el => {
             el.style.display = 'none';
         });
-        document.getElementById('company-summary').style.display = 'grid';
+        const companySummary = document.getElementById('company-summary');
+        if (companySummary) {
+            companySummary.style.display = 'grid';
+        }
         
         // Sequence: Traditional -> Partial -> Automated -> Summary
         setTimeout(() => this.showExplanation('traditional'), 1000);
@@ -270,7 +285,10 @@ class PresentationController {
 
     showExplanation(type) {
         // Hide summary
-        document.getElementById('company-summary').style.display = 'none';
+        const companySummary = document.getElementById('company-summary');
+        if (companySummary) {
+            companySummary.style.display = 'none';
+        }
         
         // Hide all explanations
         document.querySelectorAll('.company-explanation').forEach(el => {
@@ -278,7 +296,10 @@ class PresentationController {
         });
         
         // Show specific explanation
-        document.getElementById(type + '-explanation').style.display = 'block';
+        const explanation = document.getElementById(type + '-explanation');
+        if (explanation) {
+            explanation.style.display = 'block';
+        }
     }
 
     showSummary() {
@@ -288,7 +309,10 @@ class PresentationController {
         });
         
         // Show summary
-        document.getElementById('company-summary').style.display = 'grid';
+        const companySummary = document.getElementById('company-summary');
+        if (companySummary) {
+            companySummary.style.display = 'grid';
+        }
     }
 
     startSystemsAnimation() {
@@ -306,6 +330,8 @@ class PresentationController {
 
     initializeSystemsChart() {
         const canvas = document.getElementById('systemsChart');
+        if (!canvas) return;
+        
         const ctx = canvas.getContext('2d');
         
         // Store canvas context for animation
@@ -316,6 +342,8 @@ class PresentationController {
     }
 
     drawSystemsChart() {
+        if (!this.chartCtx || !this.chartCanvas) return;
+        
         const ctx = this.chartCtx;
         const canvas = this.chartCanvas;
         const centerX = canvas.width / 2;
@@ -337,10 +365,10 @@ class PresentationController {
             // Highlight current system
             if (index === this.currentSystem) {
                 ctx.fillStyle = system.color;
-                ctx.globalAlpha = 0.8;
+                ctx.globalAlpha = 0.9;
             } else {
                 ctx.fillStyle = system.color;
-                ctx.globalAlpha = 0.3;
+                ctx.globalAlpha = 0.4;
             }
             
             ctx.fill();
@@ -353,15 +381,18 @@ class PresentationController {
             const textY = centerY + Math.sin(textAngle) * textRadius;
             
             ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 12px Arial';
+            ctx.font = 'bold 11px Arial';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             
             // Split long names
             const words = system.name.split(' ');
             if (words.length > 2) {
-                ctx.fillText(words.slice(0, 2).join(' '), textX, textY - 8);
-                ctx.fillText(words.slice(2).join(' '), textX, textY + 8);
+                ctx.fillText(words.slice(0, 2).join(' '), textX, textY - 6);
+                ctx.fillText(words.slice(2).join(' '), textX, textY + 6);
+            } else if (words.length === 2) {
+                ctx.fillText(words[0], textX, textY - 6);
+                ctx.fillText(words[1], textX, textY + 6);
             } else {
                 ctx.fillText(system.name, textX, textY);
             }
@@ -372,18 +403,11 @@ class PresentationController {
         // Draw center circle
         ctx.beginPath();
         ctx.arc(centerX, centerY, 50, 0, 2 * Math.PI);
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
         ctx.fill();
-        ctx.strokeStyle = '#e5e7eb';
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#00c9ff';
+        ctx.lineWidth = 3;
         ctx.stroke();
-        
-        // Draw center text
-        ctx.fillStyle = '#374151';
-        ctx.font = 'bold 14px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText('Digital', centerX, centerY - 8);
-        ctx.fillText('Systems', centerX, centerY + 8);
     }
 
     updateChart() {
@@ -393,20 +417,28 @@ class PresentationController {
     updateSystemDetails() {
         const system = systemsData[this.currentSystem];
         
-        document.getElementById('systemName').textContent = system.name;
-        document.getElementById('systemCategory').textContent = system.category;
-        document.getElementById('systemWhat').textContent = system.what;
-        document.getElementById('systemWhy').textContent = system.why;
-        document.getElementById('systemGrowth').textContent = system.growth;
+        const systemName = document.getElementById('systemName');
+        const systemCategory = document.getElementById('systemCategory');
+        const systemWhat = document.getElementById('systemWhat');
+        const systemWhy = document.getElementById('systemWhy');
+        const systemGrowth = document.getElementById('systemGrowth');
+        
+        if (systemName) systemName.textContent = system.name;
+        if (systemCategory) systemCategory.textContent = system.category;
+        if (systemWhat) systemWhat.textContent = system.what;
+        if (systemWhy) systemWhy.textContent = system.why;
+        if (systemGrowth) systemGrowth.textContent = system.growth;
     }
 
     initializeGrowthChart() {
         const canvas = document.getElementById('growthChart');
+        if (!canvas) return;
+        
         const ctx = canvas.getContext('2d');
         
         const months = ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
         const growthData = [0, 15, 35, 55, 75, 100];
-        const colors = ['#ef4444', '#f59e0b', '#10b981', '#10b981', '#10b981', '#10b981'];
+        const colors = ['#ff6b6b', '#ffd93d', '#6bcf7f', '#6bcf7f', '#6bcf7f', '#6bcf7f'];
         
         // Clear canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -417,7 +449,7 @@ class PresentationController {
         const chartHeight = canvas.height - 2 * padding;
         
         // Draw axes
-        ctx.strokeStyle = '#e5e7eb';
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
         ctx.lineWidth = 2;
         
         // Y-axis
@@ -433,31 +465,36 @@ class PresentationController {
         ctx.stroke();
         
         // Draw bars
-        const barWidth = chartWidth / months.length * 0.8;
-        const barSpacing = chartWidth / months.length * 0.2;
+        const barWidth = chartWidth / months.length * 0.7;
+        const barSpacing = chartWidth / months.length * 0.3;
         
         growthData.forEach((value, index) => {
             const barHeight = (value / 100) * chartHeight;
             const x = padding + index * (barWidth + barSpacing) + barSpacing / 2;
             const y = canvas.height - padding - barHeight;
             
-            // Draw bar
-            ctx.fillStyle = colors[index];
+            // Draw bar with gradient
+            const gradient = ctx.createLinearGradient(0, y, 0, y + barHeight);
+            gradient.addColorStop(0, colors[index]);
+            gradient.addColorStop(1, colors[index] + '80');
+            
+            ctx.fillStyle = gradient;
             ctx.fillRect(x, y, barWidth, barHeight);
             
             // Draw value label
-            ctx.fillStyle = '#374151';
+            ctx.fillStyle = 'white';
             ctx.font = 'bold 14px Arial';
             ctx.textAlign = 'center';
             ctx.fillText(value + '%', x + barWidth / 2, y - 10);
             
             // Draw month label
             ctx.font = '12px Arial';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
             ctx.fillText(months[index], x + barWidth / 2, canvas.height - padding + 20);
         });
         
         // Draw Y-axis labels
-        ctx.fillStyle = '#6b7280';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
         ctx.font = '12px Arial';
         ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
@@ -472,32 +509,40 @@ class PresentationController {
         this.comparisonStep = 0;
         
         // Show manufacturing first
-        document.getElementById('manufacturingComparison').style.display = 'block';
-        document.getElementById('serviceComparison').style.display = 'none';
-        document.getElementById('multinationalVision').style.display = 'none';
+        const manufacturingComp = document.getElementById('manufacturingComparison');
+        const serviceComp = document.getElementById('serviceComparison');
+        const multinationalVision = document.getElementById('multinationalVision');
+        
+        if (manufacturingComp) manufacturingComp.style.display = 'block';
+        if (serviceComp) serviceComp.style.display = 'none';
+        if (multinationalVision) multinationalVision.style.display = 'none';
         
         // Animate manufacturing items
         this.animateComparisonItems('manufacturingComparison');
         
         // Switch to service after 8 seconds
         setTimeout(() => {
-            document.getElementById('manufacturingComparison').style.display = 'none';
-            document.getElementById('serviceComparison').style.display = 'block';
+            if (manufacturingComp) manufacturingComp.style.display = 'none';
+            if (serviceComp) serviceComp.style.display = 'block';
             this.animateComparisonItems('serviceComparison');
         }, 8000);
         
         // Switch to multinational vision after 16 seconds
         setTimeout(() => {
-            document.getElementById('serviceComparison').style.display = 'none';
-            document.getElementById('multinationalVision').style.display = 'block';
+            if (serviceComp) serviceComp.style.display = 'none';
+            if (multinationalVision) multinationalVision.style.display = 'block';
         }, 16000);
     }
 
     animateComparisonItems(containerId) {
         const container = document.getElementById(containerId);
+        if (!container) return;
+        
         const items = container.querySelectorAll('.comparison-item');
         
         items.forEach((item, index) => {
+            // Reset animation
+            item.classList.remove('animate');
             setTimeout(() => {
                 item.classList.add('animate');
             }, index * 2000); // 2 second delay between items
@@ -507,54 +552,74 @@ class PresentationController {
 
 // Email and Contact Functions
 function sendEmail() {
-    const subject = encodeURIComponent('Digital Transformation Inquiry');
-    const body = encodeURIComponent('Hi,\n\nI am interested in learning more about your digital transformation services for my company.\n\nPlease contact me to discuss further.\n\nBest regards');
+    const subject = encodeURIComponent('Digital Transformation Inquiry - Discover Your Digital Potential');
+    const body = encodeURIComponent(`Hi,
+
+I am interested in learning more about your digital transformation services for my company.
+
+I saw your presentation and would like to discuss:
+- Complete system integration (12 systems for ₹59,999)
+- Implementation timeline and support
+- ROI expectations and growth projections
+
+Please contact me to discuss further.
+
+Best regards`);
     window.location.href = `mailto:sudarshankarn@gmail.com?subject=${subject}&body=${body}`;
 }
 
 function scheduleCall() {
-    const subject = encodeURIComponent('Schedule Consultation Call');
-    const body = encodeURIComponent('Hi,\n\nI would like to schedule a consultation call to discuss digital transformation for my company.\n\nPlease let me know your available times.\n\nBest regards');
+    const subject = encodeURIComponent('Schedule Digital Transformation Consultation');
+    const body = encodeURIComponent(`Hi,
+
+I would like to schedule a consultation call to discuss digital transformation for my company.
+
+Areas of interest:
+- Moving from 40% to 100% digitalization
+- System integration roadmap
+- Investment and ROI discussion
+- Implementation timeline
+
+Please let me know your available times.
+
+Best regards`);
     window.location.href = `mailto:sudarshankarn@gmail.com?subject=${subject}&body=${body}`;
 }
 
 // Company Type Explanation Function (for slide 2 click interactions)
 function showExplanation(type) {
-    // This function is called when clicking on company type cards
-    document.getElementById('company-summary').style.display = 'none';
+    const companySummary = document.getElementById('company-summary');
+    if (companySummary) {
+        companySummary.style.display = 'none';
+    }
     
     document.querySelectorAll('.company-explanation').forEach(el => {
         el.style.display = 'none';
     });
     
-    document.getElementById(type + '-explanation').style.display = 'block';
+    const explanation = document.getElementById(type + '-explanation');
+    if (explanation) {
+        explanation.style.display = 'block';
+    }
     
     // Auto-hide after 5 seconds
     setTimeout(() => {
-        document.getElementById(type + '-explanation').style.display = 'none';
-        document.getElementById('company-summary').style.display = 'grid';
+        if (explanation) {
+            explanation.style.display = 'none';
+        }
+        if (companySummary) {
+            companySummary.style.display = 'grid';
+        }
     }, 5000);
 }
 
 // Initialize the presentation when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new PresentationController();
-});
-
-// Add smooth scrolling and performance optimizations
-window.addEventListener('load', () => {
-    // Preload next slide images and content
-    document.body.style.opacity = '1';
-    
-    // Add loading animation completion
-    setTimeout(() => {
-        document.querySelector('.presentation-container').classList.add('loaded');
-    }, 500);
+    window.presentationController = new PresentationController();
 });
 
 // Handle window resize
 window.addEventListener('resize', debounce(() => {
-    // Redraw charts if they exist
     const presentation = window.presentationController;
     if (presentation && presentation.chartCtx) {
         presentation.drawSystemsChart();
@@ -576,3 +641,14 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+    setTimeout(() => {
+        const presentation = document.querySelector('.presentation-container');
+        if (presentation) {
+            presentation.classList.add('loaded');
+        }
+    }, 500);
+});
