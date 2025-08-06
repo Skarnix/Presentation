@@ -1,0 +1,522 @@
+# Create the updated HTML file with enhanced structure
+html_content = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accelerating Your Digital Journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="floating-elements">
+                <div class="float-element"></div>
+                <div class="float-element"></div>
+                <div class="float-element"></div>
+                <div class="float-element"></div>
+                <div class="float-element"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in-up">Accelerating Your Digital Journey</h1>
+                <p class="hero-subtitle fade-in-up" data-delay="200">From Good to Great</p>
+                <div class="progress-journey fade-in-up" data-delay="400">
+                    <div class="journey-step">
+                        <div class="step-circle">0%</div>
+                        <span class="step-label">Manual Processes</span>
+                    </div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step active">
+                        <div class="step-circle">40%</div>
+                        <span class="step-label">Your Success</span>
+                    </div>
+                    <div class="journey-arrow">→</div>
+                    <div class="journey-step">
+                        <div class="step-circle">100%</div>
+                        <span class="step-label">Full Potential</span>
+                    </div>
+                </div>
+                <div class="cta-buttons fade-in-up" data-delay="600">
+                    <button class="btn-primary" onclick="scrollToSection('solutions')">Discover Solutions</button>
+                    <button class="btn-secondary" onclick="scrollToSection('calculator')">Calculate ROI</button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Digital Maturity Sections -->
+    <section class="section-wrapper" id="digital-stages">
+        <div class="container">
+            <!-- 0% Digital Company -->
+            <div class="maturity-section fade-in-section">
+                <div class="section-header">
+                    <h2 class="section-title">The 0% Digital Company</h2>
+                    <p class="section-subtitle">Where many businesses struggle without proper systems</p>
+                </div>
+                <div class="problems-grid">
+                    <div class="problem-card hover-lift">
+                        <div class="problem-icon">📋</div>
+                        <h3>Manual Processes</h3>
+                        <p>Paper-based attendance tracking and record keeping</p>
+                    </div>
+                    <div class="problem-card hover-lift">
+                        <div class="problem-icon">📊</div>
+                        <h3>Excel Dependency</h3>
+                        <p>Inventory and data management through spreadsheets</p>
+                    </div>
+                    <div class="problem-card hover-lift">
+                        <div class="problem-icon">📧</div>
+                        <h3>Basic Communication</h3>
+                        <p>Email-only customer and vendor interactions</p>
+                    </div>
+                    <div class="problem-card hover-lift">
+                        <div class="problem-icon">🔍</div>
+                        <h3>No Insights</h3>
+                        <p>Limited visibility into business performance</p>
+                    </div>
+                    <div class="problem-card hover-lift">
+                        <div class="problem-icon">⚠️</div>
+                        <h3>High Error Rates</h3>
+                        <p>Manual processes lead to compliance issues</p>
+                    </div>
+                    <div class="problem-card hover-lift">
+                        <div class="problem-icon">🔗</div>
+                        <h3>Disconnected Systems</h3>
+                        <p>Isolated departments with no integration</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 40% Digital Maturity -->
+            <div class="maturity-section success-section fade-in-section">
+                <div class="section-header">
+                    <h2 class="section-title">Your Success Story: 40% Digital Maturity</h2>
+                    <p class="section-subtitle">Congratulations! You're already ahead of the curve</p>
+                </div>
+                <div class="success-content">
+                    <div class="success-circle">
+                        <div class="progress-ring">
+                            <svg class="progress-svg" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="50" stroke="#e0e0e0" stroke-width="8" fill="none"></circle>
+                                <circle cx="60" cy="60" r="50" stroke="#4CAF50" stroke-width="8" fill="none" 
+                                        stroke-dasharray="314" stroke-dashoffset="188" class="progress-circle"></circle>
+                            </svg>
+                            <div class="progress-text">40%</div>
+                        </div>
+                    </div>
+                    <div class="success-achievements">
+                        <div class="achievement-item slide-in-right">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Basic digital tools implemented</span>
+                        </div>
+                        <div class="achievement-item slide-in-right" data-delay="100">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Some process automation in place</span>
+                        </div>
+                        <div class="achievement-item slide-in-right" data-delay="200">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Initial performance tracking</span>
+                        </div>
+                        <div class="achievement-item slide-in-right" data-delay="300">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Growing market presence</span>
+                        </div>
+                        <div class="achievement-item slide-in-right" data-delay="400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Engaged team members</span>
+                        </div>
+                        <div class="achievement-item slide-in-right" data-delay="500">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Strong foundation for growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Missing 60% -->
+            <div class="maturity-section potential-section fade-in-section">
+                <div class="section-header">
+                    <h2 class="section-title">The Missing 60%: Untapped Potential</h2>
+                    <p class="section-subtitle">Your opportunity for exponential growth</p>
+                </div>
+                <div class="potential-visual">
+                    <div class="potential-bars">
+                        <div class="bar current-bar">
+                            <div class="bar-fill" data-width="40"></div>
+                            <div class="bar-label">Current: 40%</div>
+                        </div>
+                        <div class="bar potential-bar">
+                            <div class="bar-fill potential" data-width="60"></div>
+                            <div class="bar-label">Opportunity: 60%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card hover-scale">
+                        <div class="benefit-icon">💰</div>
+                        <h3>Revenue Growth</h3>
+                        <p>60% increase in revenue potential through better systems</p>
+                    </div>
+                    <div class="benefit-card hover-scale">
+                        <div class="benefit-icon">⚡</div>
+                        <h3>Efficiency Gains</h3>
+                        <p>70% reduction in manual tasks and bottlenecks</p>
+                    </div>
+                    <div class="benefit-card hover-scale">
+                        <div class="benefit-icon">📈</div>
+                        <h3>Market Position</h3>
+                        <p>Competitive advantage through digital transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Solutions -->
+    <section class="solutions-section" id="solutions">
+        <div class="container">
+            <div class="section-header fade-in-section">
+                <h2 class="section-title">Our Software Solutions</h2>
+                <p class="section-subtitle">Complete digital transformation suite</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card hover-lift fade-in-up" data-delay="0">
+                    <div class="solution-icon">⏰</div>
+                    <h3>Attendance System</h3>
+                    <p>Automated time tracking and workforce management</p>
+                    <div class="solution-metric">95% reduction in attendance errors</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="100">
+                    <div class="solution-icon">👥</div>
+                    <h3>HR Recruitment System</h3>
+                    <p>Streamlined hiring and candidate management</p>
+                    <div class="solution-metric">60% faster recruitment process</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="200">
+                    <div class="solution-icon">📊</div>
+                    <h3>Employee Dashboard</h3>
+                    <p>Real-time performance and productivity insights</p>
+                    <div class="solution-metric">40% improvement in engagement</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="300">
+                    <div class="solution-icon">📦</div>
+                    <h3>Inventory Management</h3>
+                    <p>Automated stock control and optimization</p>
+                    <div class="solution-metric">30% reduction in inventory costs</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="400">
+                    <div class="solution-icon">🤝</div>
+                    <h3>Supplier Management</h3>
+                    <p>Vendor relationship and procurement automation</p>
+                    <div class="solution-metric">25% cost savings on procurement</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="500">
+                    <div class="solution-icon">⚙️</div>
+                    <h3>Production Management</h3>
+                    <p>Manufacturing workflow optimization</p>
+                    <div class="solution-metric">35% increase in efficiency</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="600">
+                    <div class="solution-icon">💼</div>
+                    <h3>Sales CRM</h3>
+                    <p>Customer relationship and pipeline management</p>
+                    <div class="solution-metric">50% increase in lead conversion</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="700">
+                    <div class="solution-icon">🔄</div>
+                    <h3>Flow Management</h3>
+                    <p>Business process automation and optimization</p>
+                    <div class="solution-metric">70% reduction in bottlenecks</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="800">
+                    <div class="solution-icon">📈</div>
+                    <h3>Central MIS Scoring</h3>
+                    <p>Unified business intelligence and reporting</p>
+                    <div class="solution-metric">Real-time insights across operations</div>
+                </div>
+                <div class="solution-card hover-lift fade-in-up" data-delay="900">
+                    <div class="solution-icon">✅</div>
+                    <h3>Checklists</h3>
+                    <p>Standardized quality control and compliance</p>
+                    <div class="solution-metric">85% reduction in compliance errors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Path -->
+    <section class="growth-path-section fade-in-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Path to 100% Growth</h2>
+                <p class="section-subtitle">Visual progression of your digital transformation</p>
+            </div>
+            <div class="growth-timeline">
+                <div class="timeline-step">
+                    <div class="step-number">0%</div>
+                    <div class="step-content">
+                        <h3>Manual Operations</h3>
+                        <ul>
+                            <li>Paper-based processes</li>
+                            <li>High error rates</li>
+                            <li>Limited visibility</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-connector">→</div>
+                <div class="timeline-step active">
+                    <div class="step-number">40%</div>
+                    <div class="step-content">
+                        <h3>Your Current State</h3>
+                        <ul>
+                            <li>Basic digital tools</li>
+                            <li>Some automation</li>
+                            <li>Growing efficiently</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-connector">→</div>
+                <div class="timeline-step">
+                    <div class="step-number">100%</div>
+                    <div class="step-content">
+                        <h3>Full Digital Maturity</h3>
+                        <ul>
+                            <li>Complete automation</li>
+                            <li>Real-time insights</li>
+                            <li>Maximum efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="section-header fade-in-section">
+                <h2 class="section-title">Performance Impact Metrics</h2>
+                <p class="section-subtitle">Quantified benefits of our solutions</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card fade-in-up" data-delay="0">
+                    <div class="metric-icon">⏱️</div>
+                    <div class="metric-value" data-target="50">0</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-label">Time Savings</div>
+                    <div class="metric-description">Reduction in manual task time</div>
+                </div>
+                <div class="metric-card fade-in-up" data-delay="200">
+                    <div class="metric-icon">🎯</div>
+                    <div class="metric-value" data-target="70">0</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-label">Error Reduction</div>
+                    <div class="metric-description">Fewer process errors</div>
+                </div>
+                <div class="metric-card fade-in-up" data-delay="400">
+                    <div class="metric-icon">📈</div>
+                    <div class="metric-value" data-target="60">0</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-label">Revenue Growth</div>
+                    <div class="metric-description">Projected revenue increase</div>
+                </div>
+                <div class="metric-card fade-in-up" data-delay="600">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-value" data-target="35">0</div>
+                    <div class="metric-unit">%</div>
+                    <div class="metric-label">Cost Savings</div>
+                    <div class="metric-description">Operational cost reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before vs After -->
+    <section class="comparison-section fade-in-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Before vs After Transformation</h2>
+                <p class="section-subtitle">See the dramatic difference our solutions make</p>
+            </div>
+            <div class="comparison-container">
+                <div class="comparison-side before">
+                    <h3>Before: Manual Operations</h3>
+                    <div class="comparison-metrics">
+                        <div class="comparison-metric">
+                            <span class="metric-label">Processing Time</span>
+                            <span class="metric-value negative">8 hours</span>
+                        </div>
+                        <div class="comparison-metric">
+                            <span class="metric-label">Error Rate</span>
+                            <span class="metric-value negative">15%</span>
+                        </div>
+                        <div class="comparison-metric">
+                            <span class="metric-label">Monthly Costs</span>
+                            <span class="metric-value negative">₹50,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vs-divider">
+                    <div class="vs-text">VS</div>
+                </div>
+                <div class="comparison-side after">
+                    <h3>After: Digital Solutions</h3>
+                    <div class="comparison-metrics">
+                        <div class="comparison-metric">
+                            <span class="metric-label">Processing Time</span>
+                            <span class="metric-value positive">2 hours</span>
+                        </div>
+                        <div class="comparison-metric">
+                            <span class="metric-label">Error Rate</span>
+                            <span class="metric-value positive">2%</span>
+                        </div>
+                        <div class="comparison-metric">
+                            <span class="metric-label">Monthly Costs</span>
+                            <span class="metric-value positive">₹25,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator -->
+    <section class="calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-header fade-in-section">
+                <h2 class="section-title">ROI Calculator</h2>
+                <p class="section-subtitle">Calculate your return on investment</p>
+            </div>
+            <div class="calculator-container">
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="monthlyRevenue">Monthly Revenue (₹)</label>
+                        <input type="number" id="monthlyRevenue" placeholder="Enter amount" value="1000000">
+                    </div>
+                    <div class="input-group">
+                        <label for="currentCost">Current Manual Process Cost (₹)</label>
+                        <input type="number" id="currentCost" placeholder="Enter amount" value="200000">
+                    </div>
+                    <div class="input-group">
+                        <label for="softwareInvestment">Software Investment (₹)</label>
+                        <input type="number" id="softwareInvestment" placeholder="Enter amount" value="500000">
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-card">
+                        <h3>Monthly Savings</h3>
+                        <div class="result-value" id="monthlySavings">₹75.0K</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Payback Period</h3>
+                        <div class="result-value" id="paybackPeriod">6 months</div>
+                    </div>
+                    <div class="result-card">
+                        <h3>Annual ROI</h3>
+                        <div class="result-value" id="annualROI">180%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header fade-in-section">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">What our clients say about their transformation</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card hover-lift fade-in-up" data-delay="0">
+                    <div class="testimonial-quote">
+                        "Our productivity increased by 60% within 6 months of implementing their solutions. The ROI was phenomenal!"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Rajesh Kumar</strong>
+                        <span>CEO, TechStart Manufacturing</span>
+                    </div>
+                    <div class="testimonial-metrics">
+                        <div class="metric">60% productivity increase</div>
+                        <div class="metric">6 months implementation</div>
+                    </div>
+                </div>
+                <div class="testimonial-card hover-lift fade-in-up" data-delay="200">
+                    <div class="testimonial-quote">
+                        "From manual processes to complete automation - they transformed our entire operation seamlessly."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Priya Sharma</strong>
+                        <span>Operations Head, GrowFast Solutions</span>
+                    </div>
+                    <div class="testimonial-metrics">
+                        <div class="metric">100% process automation</div>
+                        <div class="metric">Zero errors achieved</div>
+                    </div>
+                </div>
+                <div class="testimonial-card hover-lift fade-in-up" data-delay="400">
+                    <div class="testimonial-quote">
+                        "Best investment we made! Our team efficiency and customer satisfaction both doubled."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Amit Patel</strong>
+                        <span>Founder, InnovateCorp</span>
+                    </div>
+                    <div class="testimonial-metrics">
+                        <div class="metric">2x team efficiency</div>
+                        <div class="metric">2x customer satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in-section">
+                <h2 class="section-title">Let's Achieve 100% Together</h2>
+                <p class="section-subtitle">Ready to unlock your full potential?</p>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-rocket"></i>
+                        <span>Free consultation and assessment</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>60-day implementation guarantee</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Customized solution for your business</span>
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>24/7 support and maintenance</span>
+                    </div>
+                </div>
+                <p class="cta-social-proof">Join 500+ companies that have already transformed their operations</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary large">Start Your Transformation</button>
+                    <p class="cta-offer"><strong>Limited time:</strong> Get 20% off your first year implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>'''
+
+# Save HTML file
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+print("HTML file created successfully!")
